@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -88,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +121,47 @@
           }
         }
       }
-    }},
+    },
+    "typed-reactive-form": {
+      "projectType": "library",
+      "root": "projects/typed-reactive-form",
+      "sourceRoot": "projects/typed-reactive-form/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/typed-reactive-form/tsconfig.lib.json",
+            "project": "projects/typed-reactive-form/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/typed-reactive-form/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/typed-reactive-form/src/test.ts",
+            "tsConfig": "projects/typed-reactive-form/tsconfig.spec.json",
+            "karmaConfig": "projects/typed-reactive-form/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/typed-reactive-form/tsconfig.lib.json",
+              "projects/typed-reactive-form/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "sample"
 }
