@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Advanced</mat-card-title>
+    <mat-card-subtitle>
+      This form is built with a model which has another class as a property
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <label>Name</label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <label>Slogan</label>
+        <input matInput formControlName="slogan">
+      </mat-form-field>
+
+      <h3>Address</h3>
+      <div formGroupName="address">
+        <mat-form-field>
+          <label>Street 1</label>
+          <input matInput formControlName="street1">
+        </mat-form-field>
+        <mat-form-field>
+          <label>Street 2</label>
+          <input matInput formControlName="street2">
+        </mat-form-field>
+        <mat-form-field>
+          <label>City</label>
+          <input matInput formControlName="city">
+        </mat-form-field>
+        <mat-form-field>
+          <label>State</label>
+          <input matInput formControlName="state">
+        </mat-form-field>
+        <mat-form-field>
+          <label>Zip</label>
+          <input matInput formControlName="zip">
+        </mat-form-field>
+      </div>
+
+    </form>
+    <hr>
+    <div>Form Status: {{form.status}}</div>
+    <div>Form Value: {{form.value | json}}</div>
+  </mat-card-content>
+</mat-card>

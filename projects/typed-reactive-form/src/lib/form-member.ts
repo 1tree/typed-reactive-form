@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import {FormMemberOptions} from './form-model/form-member-options';
 import {FormMemberDetail} from './form-model/form-member-detail';
-import {formMemberKey} from './form-model/form-member-key';
+import {formMemberKey} from './form-model/metadata-keys';
 
 export function FormMember(options?: Partial<FormMemberOptions>): PropertyDecorator {
   return (target: any, key: string) => {
@@ -21,7 +21,6 @@ function getOptions(options: Partial<FormMemberOptions>): FormMemberOptions {
   const defaultOptions = {
     defaultValue: null,
     validators: [],
-    disable: false
   };
   if (options){
     Object.assign(defaultOptions, options);

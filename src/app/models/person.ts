@@ -1,10 +1,11 @@
 import {FormMember} from 'typed-reactive-form';
 import {Validators} from '@angular/forms';
 
+
 export class Person {
   // this will be defaulted to 0
-  @FormMember({defaultValue: 0})
-  id: number;
+  @FormMember()
+  id = 0;
 
   @FormMember({validators: [Validators.required]})
   firstName: string;

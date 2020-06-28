@@ -2,15 +2,12 @@
   <mat-card-header>
     <mat-card-title>Complete form</mat-card-title>
     <mat-card-subtitle>
-      This form includes "birthDay" because the context of "all" was provided.
+      This form includes "birthDay" because the context of "all" was provided. (Note that the
+      "id" field is in the form though not displayed which is far more typical.
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <form [formGroup]="form">
-      <mat-form-field>
-        <label>Id</label>
-        <input matInput formControlName="id">
-      </mat-form-field>
       <mat-form-field>
         <label>First Name</label>
         <input matInput formControlName="firstName">
